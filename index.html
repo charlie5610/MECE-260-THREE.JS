@@ -28,7 +28,6 @@
             renderer.setSize(window.innerWidth, window.innerHeight);
             document.body.appendChild(renderer.domElement);
 
-
              // Load Light
             var ambientLight = new THREE.AmbientLight( 0xcccccc );
             scene.add( ambientLight );
@@ -52,39 +51,29 @@
                 scene.add( gltf.scene );
                 console.log(object)
                 });	 
-//            function leftGearBox(){
-//                obj.scene.children[0].children[103].rotateX(factor*-inputSpeed)
-//                obj.scene.children[0].children[96].rotateY(factor*inputSpeed/50)
-//                obj.scene.children[0].children[97].rotateY(factor*-inputSpeed/100)
-//            }
-//            function rightGearBox(){
-//                obj.scene.children[0].children[104].rotateX(factor*-inputSpeed)                
-//                obj.scene.children[0].children[79].rotateY(factor*inputSpeed/50)                 
-//                obj.scene.children[0].children[78].rotateY(factor*-inputSpeed/100)
-//                obj.scene.children[0].children[98].rotateY(factor*-inputSpeed/100)                
-//           }
-            function animate() {
-//                leftGearBox();
-//                rightGearBox()
-                if(object){
+            function leftGearBox(){
+                object.children[0].children[53].rotateX(-inputSpeed)
+                object.children[0].children[4].rotateY(inputSpeed/50)
+                object.children[0].children[7].rotateY(-inputSpeed/100)
+            }
+            function rightGearBox(){
                 object.children[0].children[99].rotateX(-inputSpeed)
                 object.children[0].children[121].rotateY(inputSpeed/50)
                 object.children[0].children[120].rotateY(-inputSpeed/100)
                 object.children[0].children[124].rotateY(-inputSpeed/100)
-                object.children[0].children[53].rotateX(-inputSpeed)
-                object.children[0].children[4].rotateY(inputSpeed/50)
-                object.children[0].children[7].rotateY(-inputSpeed/100)
+            }
+            function animate() {
+                if(object){
+                leftGearBox();
+                rightGearBox();                
                 }
                 render();
                 requestAnimationFrame( animate );
-                }
-                
-
+            }
             function render() {
                 if (object){
                 renderer.render( scene, camera );}
-                }
-
+            }
             render();            
             animate();
         </script>
