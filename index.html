@@ -33,7 +33,7 @@
             var directionalLight = new THREE.DirectionalLight( 0xffffff );
             directionalLight.position.set( 0, 1, 1 ).normalize();
             scene.add( directionalLight );	
-            const controls = new OrbitControls( camera, renderer.domElement );
+            const controls = new THREE.OrbitControls( camera, renderer.domElement );
 
              // glTf 2.0 Loader
             var loader = new GLTFLoader();				
