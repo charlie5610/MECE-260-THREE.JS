@@ -30,6 +30,7 @@
                 scene.add( gltf.scene );
                 gltf.scene.scale.multiplyScalar(10)
                 console.log(gltf)
+                gltf.scene.children[0].children[0].material.emissive = {r: 0.1, g: 0.1, b: 0.1, isColor: true}
             }, undefined, function ( error ) {
                 console.error( error );
             } );
