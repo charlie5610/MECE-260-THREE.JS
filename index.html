@@ -14,6 +14,7 @@
             import { GLTFLoader } from 'https://threejsfundamentals.org/threejs/resources/threejs/r122/examples/jsm/loaders/GLTFLoader.js';
             import { OrbitControls } from 'https://cdn.jsdelivr.net/gh/mrdoob/three.js/examples/jsm/controls/OrbitControls.js';
             var scene = new THREE.Scene();
+            var object = null;
             var inputSpeed = 0.1;
 
              // Load Camera Perspektive
@@ -40,7 +41,7 @@
              // glTf 2.0 Loader
             var loader = new GLTFLoader();				
                 loader.load( 'asset/Car.glb', function ( gltf ) {
-                var object = gltf.scene;				
+                object = gltf.scene;				
                 gltf.scene.scale.set( 2, 2, 2 );			   
                 gltf.scene.position.x = 0;				    //Position (x = right+ left-) 
                 gltf.scene.position.y = 0;				    //Position (y = up+, down-)
@@ -49,7 +50,6 @@
                 gltf.scene.rotateY(-Math.PI/5);
                 gltf.scene.rotateX(Math.PI/10);
                 scene.add( gltf.scene );
-                obj=gltf.scene
                 console.log(gltf)
                 });	 
 //            function leftGearBox(){
@@ -66,19 +66,20 @@
             function animate() {
 //                leftGearBox();
 //                rightGearBox()
+                if(object){
                 object.scene.children[0].children[103].rotateX(-inputSpeed)
                 object.scene.children[0].children[96].rotateY(inputSpeed/50)
-                object.scene.children[0].children[97].rotateY(-inputSpeed/100)
+                object.scene.children[0].children[97].rotateY(-inputSpeed/100)}
                 render();
                 requestAnimationFrame( animate );
                 }
 
             function render() {
-                renderer.render( scene, camera );
+                if (object){
+                renderer.render( scene, camera );}
                 }
 
-            render();
-            
+            render();            
             animate();
         </script>
 	</body>
