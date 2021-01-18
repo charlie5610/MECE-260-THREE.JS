@@ -11,6 +11,7 @@
 		<script src="js/three.js"></script>
 		<script type="module">    
              // Load 3D Scene
+            import { GLTFLoader } from 'https://threejsfundamentals.org/threejs/resources/threejs/r122/examples/jsm/loaders/GLTFLoader.js';
             var scene = new THREE.Scene(); 
 
              // Load Camera Perspektive
@@ -34,7 +35,7 @@
             scene.add( directionalLight );				
 
              // glTf 2.0 Loader
-            var loader = new THREE.GLTF2Loader();				
+            var loader = new THREE.GLTFLoader();				
                 loader.load( 'asset/car.glb', function ( gltf ) {
                 var object = gltf.scene;				
                 gltf.scene.scale.set( 2, 2, 2 );			   
