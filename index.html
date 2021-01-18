@@ -35,7 +35,7 @@
             scene.add( directionalLight );				
 
              // glTf 2.0 Loader
-            var loader = new THREE.GLTFLoader();				
+            var loader = new GLTFLoader();				
                 loader.load( 'asset/car.glb', function ( gltf ) {
                 var object = gltf.scene;				
                 gltf.scene.scale.set( 2, 2, 2 );			   
