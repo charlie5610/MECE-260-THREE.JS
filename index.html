@@ -14,7 +14,7 @@
             const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
             import { GLTFLoader } from 'https://threejsfundamentals.org/threejs/resources/threejs/r122/examples/jsm/loaders/GLTFLoader.js';
             const loader = new GLTFLoader();
-            const renderer = new THREE.WebGLRenderer();
+            const renderer = new THREE.WebGLRenderer({alpha:true});
             renderer.physicallyCorrectLights = true;
             renderer.setSize( window.innerWidth, window.innerHeight );
             document.body.appendChild( renderer.domElement );
@@ -25,6 +25,7 @@
             scene.add( light );
             scene.add( light2 );
             scene.background= new THREE.Color(0xffffff)
+            renderer.setClearColor( 0xffffff, 0);
             loader.load( 'asset/Car.glb', function ( gltf ) {
                 scene.add( gltf.scene );
             }, undefined, function ( error ) {
