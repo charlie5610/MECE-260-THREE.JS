@@ -62,7 +62,7 @@
                 obj.scene.children[0].children[79].rotateY(factor*inputSpeed/50)                 
                 obj.scene.children[0].children[78].rotateY(factor*-inputSpeed/100)
                 obj.scene.children[0].children[98].rotateY(factor*-inputSpeed/100)                
-          obj  }
+           }
             function animate() {
                 leftGearBox();
                 rightGearBox()
@@ -75,8 +75,9 @@
                 }
 
             render();
-            animate();
-
+            scene.addEventListener('loaded', function (e) {
+                animate();                    
+            });
         </script>
 	</body>
 </html>
