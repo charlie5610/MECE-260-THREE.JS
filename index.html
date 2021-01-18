@@ -45,6 +45,7 @@
                 gltf.scene.position.y = 0;				    //Position (y = up+, down-)
                 gltf.scene.position.z = 0;				    //Position (z = front +, back-)
                 gltf.scene.scale.multiplyScalar(0.02)
+                gltf.scene.rotateY(Math.PI()/4);
                 scene.add( gltf.scene );
                     console.log(gltf)
                 });	 
