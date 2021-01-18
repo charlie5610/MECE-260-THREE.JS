@@ -15,6 +15,7 @@
             import { OrbitControls } from 'https://cdn.jsdelivr.net/gh/mrdoob/three.js/examples/jsm/controls/OrbitControls.js';
             var scene = new THREE.Scene();
             var obj = null;
+            var inputSpeed = 0.1;
 
              // Load Camera Perspektive
             var camera = new THREE.PerspectiveCamera( 25, window.innerWidth / window.innerHeight, 1, 20000 );
@@ -66,6 +67,9 @@
             function animate() {
 //                leftGearBox();
 //                rightGearBox()
+                obj.scene.children[0].children[103].rotateX(factor*-inputSpeed)
+                obj.scene.children[0].children[96].rotateY(factor*inputSpeed/50)
+                obj.scene.children[0].children[97].rotateY(factor*-inputSpeed/100)
                 render();
                 requestAnimationFrame( animate );
                 }
