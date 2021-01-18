@@ -48,19 +48,20 @@
                 gltf.scene.rotateY(-Math.PI/5);
                 gltf.scene.rotateX(Math.PI/10);
                 scene.add( gltf.scene );
-                    console.log(gltf)
+                obj=gltf.scene
+                console.log(gltf)
                 });	 
             function leftGearBox(){
-                gltf.scene.children[0].children[103].rotateX(factor*-inputSpeed)
-                gltf.scene.children[0].children[96].rotateY(factor*inputSpeed/50)
-                gltf.scene.children[0].children[97].rotateY(factor*-inputSpeed/100)
+                obj.scene.children[0].children[103].rotateX(factor*-inputSpeed)
+                obj.scene.children[0].children[96].rotateY(factor*inputSpeed/50)
+                obj.scene.children[0].children[97].rotateY(factor*-inputSpeed/100)
             }
             function rightGearBox(){
-                gltf.scene.children[0].children[104].rotateX(factor*-inputSpeed)                
-                gltf.scene.children[0].children[79].rotateY(factor*inputSpeed/50)                 
-                gltf.scene.children[0].children[78].rotateY(factor*-inputSpeed/100)
-                gltf.scene.children[0].children[98].rotateY(factor*-inputSpeed/100)                
-            }
+                obj.scene.children[0].children[104].rotateX(factor*-inputSpeed)                
+                obj.scene.children[0].children[79].rotateY(factor*inputSpeed/50)                 
+                obj.scene.children[0].children[78].rotateY(factor*-inputSpeed/100)
+                obj.scene.children[0].children[98].rotateY(factor*-inputSpeed/100)                
+          obj  }
             function animate() {
                 leftGearBox();
                 rightGearBox()
