@@ -28,7 +28,7 @@
             renderer.setClearColor( 0xffffff, 0);
             loader.load( 'asset/Car.glb', function ( gltf ) {
                 scene.add( gltf.scene );
-                gltf.scene.scale.multiplyScalar(0.07)
+                gltf.scene.scale.multiplyScalar(10)
             }, undefined, function ( error ) {
                 console.error( error );
             } );
