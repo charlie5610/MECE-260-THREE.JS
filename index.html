@@ -29,6 +29,7 @@
             loader.load( 'asset/Car.glb', function ( gltf ) {
                 scene.add( gltf.scene );
                 gltf.scene.scale.multiplyScalar(10)
+                console.log(gltf)
             }, undefined, function ( error ) {
                 console.error( error );
             } );
