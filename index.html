@@ -28,6 +28,7 @@
             renderer.setClearColor( 0xffffff, 0);
             loader.load( 'asset/Car.glb', function ( gltf ) {
                 scene.add( gltf.scene );
+                gltf.asset;
                 gltf.scene.scale.multiplyScalar(0.01)
                 console.log(gltf)
                 gltf.scene.children[0].children[0].material.emissive = {r: 0.1, g: 0.1, b: 0.1, isColor: true}
